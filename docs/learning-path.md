@@ -7,7 +7,8 @@
 - **Milestone 3 – DevOps Deployment (Week 12):** Ship an IaC-powered environment with monitoring
 - **Milestone 4 – Python Proficiency (Week 16):** Deliver a fully tested Python application
 - **Milestone 5 – Advanced Systems (Week 20):** Optimize code performance and packaging strategy
-- **Milestone 6 – Analytics Portfolio (Week 24):** Publish a comprehensive data analysis project
+- **Milestone 6 – Design Patterns Mastery (Week 24):** Implement a multi-pattern Python service with documentation
+- **Milestone 7 – Analytics Portfolio (Week 28):** Publish a comprehensive data analysis project
 
 ## Weekly Cadence
 | Day | Focus | Activities |
@@ -20,7 +21,7 @@
 ## Skill Progression
 1. Build strong systems thinking through IT fundamentals
 2. Adopt engineering rigor via SDLC and DevOps practices
-3. Achieve Python mastery from syntax to advanced runtime behavior
+3. Achieve Python mastery from syntax to advanced runtime behavior and reusable design patterns
 4. Apply analytical techniques to real-world datasets with effective storytelling
 
 ## Support Structures

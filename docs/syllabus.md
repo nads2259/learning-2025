@@ -4,7 +4,7 @@
 This program prepares aspiring data analysts through a comprehensive journey across core IT foundations, software engineering workflows, DevOps, and Python development. Each module introduces applied labs and portfolio projects that build toward analytical mastery.
 
 ## Structure at a Glance
-- **Duration:** 24 weeks (six 4-week modules)
+- **Duration:** 28 weeks (seven 4-week modules)
 - **Pacing:** Two instructor-led sessions per week, one lab, and one self-study sprint
 - **Assessment:** Weekly quizzes, lab submissions, milestone presentations, and a capstone project
 - **Tools Covered:** Command line, Git/GitHub, Linux, Docker, cloud platforms, Jupyter, SQL clients, BI dashboards
@@ -32,7 +32,7 @@ This program prepares aspiring data analysts through a comprehensive journey acr
    - Understanding the Python execution model, bytecode, and interpreters
 5. **Advanced Python & Systems Concepts**
    - Memory management, garbage collection, reference counting
-   - Object-oriented design patterns, iterators/generators, decorators
+   - Iterators/generators, decorators, metaprogramming internals
    - Concurrency & parallelism (threading, multiprocessing, asyncio)
    - Performance optimization, profiling, C extensions, packaging
 6. **Applied Data Analysis**
@@ -40,6 +40,11 @@ This program prepares aspiring data analysts through a comprehensive journey acr
    - Exploratory data analysis, statistics fundamentals, visualization
    - Working with pandas, NumPy, matplotlib, seaborn, plotly
    - Communicating insights, dashboards, storytelling, presentation skills
+7. **Python Design Patterns**
+   - Creational, structural, and behavioral Gang of Four patterns
+   - Pythonic implementations emphasizing readability and testability
+   - Refactoring labs comparing procedural vs. object-oriented approaches
+   - Capstone integration of patterns across a multi-component system
 
 ## Capstone
 Learners tackle a full analytics lifecycle project: define a business problem, ingest data, build pipelines, analyze findings, and deliver stakeholder-ready visualizations. Review boards evaluate technical accuracy, reproducibility, and narrative clarity.

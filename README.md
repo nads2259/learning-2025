@@ -1,6 +1,6 @@
 # Learning 2025: Data Analyst Journey
 
-This repository captures the curriculum, resources, and roadmap for the **Learning 2025** program. The course is designed to transition learners from foundational IT knowledge to job-ready data analysts through a structured, 24-week experience.
+This repository captures the curriculum, resources, and roadmap for the **Learning 2025** program. The course is designed to transition learners from foundational IT knowledge to job-ready data analysts through a structured, 28-week experience.
 
 ## Program Pillars
 - **IT Foundations:** Master networking (IP, TCP/IP vs. OSI), client-server models, and core security practices.
@@ -22,6 +22,7 @@ This repository captures the curriculum, resources, and roadmap for the **Learni
         ├── 04-python-fundamentals.md
         ├── 05-advanced-python.md
         ├── 06-applied-data-analysis.md
+        ├── 07-python-design-patterns.md
         └── python-module-1.md
 ```
 
