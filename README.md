@@ -21,7 +21,8 @@ This repository captures the curriculum, resources, and roadmap for the **Learni
         ├── 03-devops-and-cloud.md
         ├── 04-python-fundamentals.md
         ├── 05-advanced-python.md
-        └── 06-applied-data-analysis.md
+        ├── 06-applied-data-analysis.md
+        └── python-module-1.md
 ```
 
 ## Getting Started
