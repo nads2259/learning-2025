@@ -4,11 +4,16 @@ Yesterday
 2. OOAD
 3. OOPS concepts other than inheritance, polymorphism, abstraction, encapsulation
 4. Example for each of the principles in SOLID
-5. 
-
 
 Today
-1. Classification of Design patterns
-2. Prototype pattern
-3.
+1. Classification of Design patterns 
+3. Adapter (Structural)
+4. Bridge (Structural)
+5. Decorator (Structural)
+6. Facade (Structural)
+7. Iterator (Behavioural)
+8. Observer  (Behavioural) 
+
+
+
 
