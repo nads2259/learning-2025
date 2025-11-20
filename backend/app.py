@@ -4,13 +4,28 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/hello', methods=["GET"])
-def hello():
-    return jsonify({"message": "Hello  !!!"})
+# Creating a temporary API key
+api_key = "myapikey"
+
+
 
 @app.route('/', methods=["GET"])
 def home():
-    return jsonify({"message": "This will be my home page content"})
+    return jsonify({
+        "brand" : "pacific",
+        "page" : "home",
+        "content" : "Welcome to the Home Page of pacific!"
+    })
+    
+    
+@app.route('/contact',methods = ["GET"])
+def contact():
+    return jsonify({
+        "brand" : "pacific",
+        "page" : "contact",
+        "content" : "Welcome to the Contact page of pacific! Feel free to contact us!"
+    })
+
 
 # Add a middleware to authenticate user request before delivering data
 
