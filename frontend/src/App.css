@@ -1,38 +1,120 @@
-.App {
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", "Poppins", sans-serif;
+  background: #eef4f8;
+  color: #2b3a4a;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  background: linear-gradient(135deg, #b7d5f7, #a1c8f9);
+  padding: 28px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(140, 170, 205, 0.25);
+}
+
+.brand {
+  margin: 0;
+  font-size: 2.3rem;
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-shadow: 0 3px 10px rgba(50, 80, 120, 0.25);
+  animation: fadeIn 0.8s ease;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 16px 0;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.nav-btn {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 16px;
+  background: #dceaf7;
+  color: #426083;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 500;
+  box-shadow: 0 3px 8px rgba(100, 130, 170, 0.15);
+}
+
+.nav-btn:hover {
+  background: #cfe1f3;
+  transform: translateY(-2px);
+}
+
+.nav-btn.active {
+  background: #8fbfed;
+  color: white;
+  transform: scale(1.08);
+  font-weight: 600;
+  box-shadow: 0 5px 14px rgba(130, 170, 220, 0.35);
+}
+
+.main {
+  flex: 1;
+  padding: 40px 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.page-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #3b5775;
+  animation: fadeIn 0.5s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.content-text {
+  max-width: 650px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  color: #495d74;
+  line-height: 1.7;
+  animation: slideUp 0.6s ease;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.footer {
+  text-align: center;
+  padding: 16px;
+  background: #e6f0fa;
+  color: #60758d;
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(-10px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
