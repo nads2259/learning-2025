@@ -1,5 +1,6 @@
 import React, {useState,useEffect} from 'react';
 import './App.css';
+import Login from './Login';
 
 const API_URL = 'http://localhost:5000/api/tasks';
 
@@ -9,18 +10,52 @@ function App()
   const [task,setTask] = useState("");
   const [taskList,setTaskList] = useState([]);
   const [loading,setLoading] = useState(false);
+  const [token,setToken] = useState(() => localStorage.getItem('token')); // Get token from local storage when refreshed
+
+  function handleLogin(newToken)
+  {
+    setToken(newToken);
+  }
+  
+  function handleLogout()
+  {
+    setToken(null);
+    setTask("");
+    setTaskList([]);
+  }
 
   useEffect(() => {
-    fetchTasks();
-  },[]);
+    if (token)
+    {
+      localStorage.setItem('token',token);
+      fetchTasks();
+    }
+    else 
+    {
+      localStorage.removeItem('token');
+    }
+  },[token]);
 
   async function fetchTasks()
   {
     try 
     {
       setLoading(true);
-      const response = await fetch(API_URL);
-      const data = await response.json();
+      
+      const response = await fetch(API_URL,
+        {
+          headers : {Authorization : `Bearer ${token}`},
+        },
+      );
+
+      if (!response.ok)
+      {
+        console.error('Error loading tasks');
+        setTaskList([]);
+        return;
+      }
+
+      const data = response.json()
       setTaskList(data);
     }
     catch (err)
@@ -43,18 +78,30 @@ function App()
     const trimmed = task.trim();
     if (!trimmed) return;
 
-    const response = await fetch(
+    try 
+    {
+      const response = await fetch(
       API_URL,
       {
         method : 'POST',
-        headers : {'Content-Type' : 'application/json'},
+        headers : {'Content-Type' : 'application/json',Authorization : `Bearer ${token}`},
         body : JSON.stringify({text : trimmed}),
-      }
-    );  
+      });
 
-    const newTask = await response.json();
-    setTaskList((prev) => [newTask,...prev]);
-    setTask("");
+      if (!response.ok)
+      {
+        console.error('Error adding tasks');
+        return;
+      }
+
+      const newTask = await response.json();
+      setTaskList((prev) => [newTask,...prev]);
+      setTask("");
+
+    } catch (err)
+    {
+      console.error('Error adding task : ',err);
+    }  
   }
 
   async function deleteTask(taskID)
@@ -64,7 +111,8 @@ function App()
       const response = await fetch(`${API_URL}/${taskID}`,
         {
           method : 'DELETE',
-        })
+          headers : {Authorization : `Bearer ${token}`},
+        },)
 
       if (!response.ok)
       {
@@ -85,12 +133,39 @@ function App()
     }
   }
 
+  if (!token)
+  {
+    return (
+      
+      <div className = 'app'>
+
+        <header className = 'app-header'>
+
+          <h1 className = 'app-title'> 
+            To-Do App
+          </h1>
+          
+          <p className = 'app-subtitle'> Please log in to see your tasks. </p> 
+
+        </header>
+
+        <Login onLogin = {handleLogin} />
+
+      </div>
+
+    )
+  }
+  
+
   return (
 
     <div className = 'app'>
 
       <header className = 'app-header'>
         <h1 className = 'app-title'> To-Do App </h1>
+
+        <button onClick = {handleLogout} className = 'logout-button'> Log Out </button>
+        
       </header>
 
       <main className = 'app-main'>

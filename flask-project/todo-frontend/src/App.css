@@ -184,6 +184,21 @@
   transform : scale(0.97);
 }
 
+.logout-button {
+  margin-top: 10px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 12px;
+  transition: 0.2s;
+}
+
+.logout-button:hover {
+  background: #f2f2f2;
+}
+
 /* For mobile layout */
 
 @media (max-width : 480px)
